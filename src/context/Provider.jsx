@@ -1,5 +1,5 @@
 import React from 'react';
-import AppContext from './AppContext';
+import Context from './Context';
 
 function AppProvider({ children }) {
 
@@ -8,9 +8,9 @@ function AppProvider({ children }) {
   }
 
   return (
-    <AppContext.Provider value={ contextValue }>
+    <Context.Provider value={ contextValue }>
       { children }
-    </AppContext.Provider>
+    </Context.Provider>
   );
 }
 
