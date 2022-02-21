@@ -15,7 +15,7 @@ function Login () {
   const history = useHistory() 
 
   const handleRedirect = () => {
-    history.push('/api/cryto/btc');
+    history.push('/');
   }
 
   const handleSubmit = (e) => {
