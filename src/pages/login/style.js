@@ -8,13 +8,20 @@ export const Container = styled.div`
   height: 100vh;
   width: 100vw;
   background: #396C52;
+
+    span {
+      color: red;
+      font-size: 12px;
+    }
 `;
+
 
 export const LoginBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   height: 50vh;
   width: 40vw;
   background: #ffffff;

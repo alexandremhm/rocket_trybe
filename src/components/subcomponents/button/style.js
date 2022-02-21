@@ -11,11 +11,11 @@ export const LoginButton = styled.button `
   font-weight: normal;
   font-size: 20px;
   height: 40px;
-  width: 250px;
+  width: 276px;
   margin-top: 30px;
   outline: none;
   transition: 0.5s;
-  opacity: 0.8;
+  opacity: 0.9;
 
   &:hover {
     transform: scale(1.01);
