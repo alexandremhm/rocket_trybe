@@ -1,21 +1,20 @@
 import React from 'react';
 import './App.css';
-import { Redirect, Switch, Route,  BrowserRouter as Router } from 'react-router-dom';
+import { Switch, Route,  BrowserRouter as Router } from 'react-router-dom';
 import AppProvider from './context/Provider';
 import Login from './pages/login/Login';
-import CryptoBtc from './pages/btc/CryptoBtc';
+import Home from './pages/home/Home';
+import Update from './pages/update/Update';
 
 
 function App() {
   return (
     <Router>
       <AppProvider>
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="/api/login" />
-          </Route>
+        <Switch>          
+          <Route exact path="/" component={Home} />
           <Route exact path="/api/login" component={Login} />
-          <Route exact path="/api/cryto/btc" component={CryptoBtc} />
+          <Route exact path="/api/update" component={Update} />
         </Switch>
       </AppProvider>
     </Router>

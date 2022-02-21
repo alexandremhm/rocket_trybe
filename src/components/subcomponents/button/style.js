@@ -49,6 +49,7 @@ export const DisabledButton = styled.button `
 export const ComebackButton = styled.button `
   background: #c4c4c4;
   border: none;
+  border-radius: 5px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;

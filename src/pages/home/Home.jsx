@@ -4,7 +4,7 @@ import Label from '../../components/subcomponents/label/index.js';
 import GlobalButton from '../../components/subcomponents/button/index.js';
 
 
-function CryptoBtc () {
+function Home () {
 
   return (
    <S.Container>
@@ -37,4 +37,4 @@ function CryptoBtc () {
   )
 }
 
-export default CryptoBtc;
+export default Home;
