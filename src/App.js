@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Redirect, Switch, Route,  BrowserRouter as Router } from 'react-router-dom';
+import AppProvider from './context/Provider';
+import Login from './pages/login/Login';
+import CryptoBtc from './pages/btc/CryptoBtc';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppProvider>
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/api/login" />
+          </Route>
+          <Route exact path="/api/login" component={Login} />
+          <Route exact path="/api/cryto/btc" component={CryptoBtc} />
+        </Switch>
+      </AppProvider>
+    </Router>
   );
 }
 
