@@ -1,6 +1,6 @@
-const jwtKey = require('fs')
-  .readFileSync(`${__dirname}/../../jwt.evaluation.key`, { encoding: 'utf-8' })
-  .trim();
+require('dotenv').config();
+
+const jwtKey = process.env.JWT_KEY;
 
 const jwtConfig = {
   expiresIn: '10d',
