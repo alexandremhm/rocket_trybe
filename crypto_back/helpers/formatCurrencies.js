@@ -21,6 +21,8 @@ const formatResponse = (data) => {
 
   const { USD: { rate_float: rateFloat } } = response;
 
+  delete response.GBP;
+
   response.bpi.BRL = {
     code: 'BRL',
     rate: rateFormater(BRL, rateFloat),

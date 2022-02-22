@@ -9,6 +9,8 @@ app.use(cors());
 
 app.use('/login', routes.login);
 
+app.use('/crypto/btc', routes.currency);
+
 app.use('/helloworld', (_req, res) => {
   res.send('Hello World');
 });
