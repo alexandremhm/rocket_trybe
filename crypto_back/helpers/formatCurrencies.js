@@ -6,42 +6,44 @@ const rateFormater = (value, usdRate) => {
   const currency = Number(value);
   const rate = Number(currency * usdRate);
 
-  return rate.toLocaleString('en-US', { minimumFractionDigits: 4 });
+  const response = rate.toLocaleString('en-US', { minimumFractionDigits: 4 });
+  return response;
 };
 
 const rateFormaterFloat = (value, usdRateFloat) => {
   const currency = Number(value);
   const rate = Number(currency * usdRateFloat);
 
-  return rate.toFixed(4);
+  const response = rate.toFixed(4);
+  return response;
 };
 
 const formatResponse = (data) => {
   const response = data;
 
-  const { USD: { rate_float: rateFloat } } = response;
+  console.log(response.bpi.USD.rate_float)
 
-  delete response.GBP;
+  delete response.bpi.GBP;
 
   response.bpi.BRL = {
     code: 'BRL',
-    rate: rateFormater(BRL, rateFloat),
+    rate: rateFormater(BRL, response.bpi.USD.rate_float),
     description: 'Brazilian Real',
-    rate_float: rateFormaterFloat(BRL, rateFloat),
+    rate_float: rateFormaterFloat(BRL, response.bpi.USD.rate_float),
   };
 
   response.bpi.CAD = {
     code: 'CAD',
-    rate: rateFormater(CAD, rateFloat),
+    rate: rateFormater(CAD, response.bpi.USD.rate_float),
     description: 'Canadian Dollar',
-    rate_float: rateFormaterFloat(CAD, rateFloat),
+    rate_float: rateFormaterFloat(CAD, response.bpi.USD.rate_float),
   };
 
   response.bpi.EUR = {
     code: 'EUR',
-    rate: rateFormater(EUR, rateFloat),
+    rate: rateFormater(EUR, response.bpi.USD.rate_float),
     description: 'Euro',
-    rate_float: rateFormaterFloat(EUR, rateFloat),
+    rate_float: rateFormaterFloat(EUR, response.bpi.USD.rate_float),
   };
 
   return response;
