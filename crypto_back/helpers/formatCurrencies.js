@@ -21,8 +21,6 @@ const rateFormaterFloat = (value, usdRateFloat) => {
 const formatResponse = (data) => {
   const response = data;
 
-  console.log(response.bpi.USD.rate_float)
-
   delete response.bpi.GBP;
 
   response.bpi.BRL = {

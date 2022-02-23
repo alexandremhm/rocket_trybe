@@ -5,6 +5,6 @@ const { tokenValidator } = require('../middlewares/tokenAuth');
 const { currencyValuesValidator, currenciesCodeValidator } = require('../middlewares/currency');
 
 router.get('/crypto/btc', tokenValidator, controller.getCurrencies);
-router.post('/crypto/btc', tokenValidator, currencyValuesValidator, currenciesCodeValidator, controller.updateCurrencyOnJson);
+router.post('/crypto/btc', tokenValidator, currenciesCodeValidator, currencyValuesValidator, controller.updateCurrencyOnJson);
 
 module.exports = router;

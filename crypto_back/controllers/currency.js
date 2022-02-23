@@ -11,8 +11,8 @@ const getCurrencies = async (_req, res) => {
 
 const updateCurrencyOnJson = async (req, res) => {
   try {
-    const { currency, value } = req.body;
-    await Service.updateCurrencyOnJson(currency, value);
+    const { code, value } = req.body;
+    await Service.updateCurrencyOnJson(code, value);
     return res.status(200).json({ message: 'Valor alterado com sucesso!' });
   } catch (e) {
     return res.status(500).json({ message: 'Erro interno' });

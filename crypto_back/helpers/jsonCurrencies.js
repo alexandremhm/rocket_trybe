@@ -11,9 +11,11 @@ const writeJsonData = (key, value) => {
   const file = path.join(`${__dirname}/../currencies.json`);
   const raw = fs.readFileSync(file);
 
-  raw[key] = String(value);
+  const data = JSON.parse(raw);
 
-  fs.writeFileSync(file, JSON.stringify(raw));
+  data[key] = String(value);
+
+  fs.writeFileSync(file, JSON.stringify(data));
 };
 
 module.exports = {
