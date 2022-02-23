@@ -8,8 +8,8 @@ const getCurrencies = async () => {
   return formatedResponse;
 };
 
-const updateCurrencyOnJson = async (currency, value) => {
-  writeJsonData(currency, value);
+const updateCurrencyOnJson = async (code, value) => {
+  writeJsonData(code, value);
 };
 
 module.exports = {
