@@ -21,4 +21,6 @@ const tokenValidator = async (req, res, next) => {
   }
 };
 
-module.exports = tokenValidator;
+module.exports = {
+  tokenValidator,
+};
