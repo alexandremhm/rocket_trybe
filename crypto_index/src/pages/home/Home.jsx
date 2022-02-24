@@ -1,7 +1,6 @@
 /* eslint-disable react/no-children-prop */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
 import * as S from './style';
 import Label from '../../components/subcomponents/label/index';
 import GlobalButton from '../../components/subcomponents/button/index';
@@ -16,7 +15,6 @@ function Home() {
 
   useEffect(() => {
     setLoading(true);
-    toast.success('Boas vindas!');
     const token = getLocalStorage();
     if (!token) {
       navigate('/login');
@@ -35,7 +33,6 @@ function Home() {
 
   return (
     <S.Container>
-      <ToastContainer />
       {loading ? (
         <LoadSpinner />
       ) : (
