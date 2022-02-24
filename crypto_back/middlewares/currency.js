@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 const schema = Joi.object().keys({
-  value: Joi.number().integer().positive().required(),
+  value: Joi.number().precision(2).positive().required(),
 });
 
 const currencyValuesValidator = (req, res, next) => {
