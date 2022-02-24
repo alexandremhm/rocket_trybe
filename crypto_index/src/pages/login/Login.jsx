@@ -2,7 +2,7 @@
 /* eslint consistent-return: "error" */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { createContext } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import * as S from './style';
 import GlobalButton from '../../components/subcomponents/button/index';
 import { PasswordInput, EmailInput } from '../../components/subcomponents/input/style';
@@ -11,7 +11,6 @@ import handleLogin from '../../services/login';
 
 function Login() {
   const [email, setEmail] = useState('');
-  const [errorMessage, setErrorMessage] = useState(false);
   const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ function Login() {
       localStorage.setItem('token', token);
       navigate('/');
     } catch (error) {
-      setErrorMessage(error.response.data.message);
+      toast.error('Login failed');
     }
   };
 
@@ -31,11 +30,12 @@ function Login() {
     const parsePassword = parseInt(password, 10);
     schema.validate({ password: parsePassword, email })
       .then(() => { handleRedirect(); })
-      .catch(() => { setErrorMessage((state) => !state); });
+      .catch(() => { toast.error('Login failed! Digite as credenciais corretas.'); });
   };
 
   return (
     <S.Container>
+      <ToastContainer />
       <S.LoginBox>
         <S.Title>Login</S.Title>
         <EmailInput
@@ -44,7 +44,6 @@ function Login() {
         <PasswordInput
           onChange={(e) => setPassword(e.target.value)}
         />
-        { errorMessage && <span>Dados inválidos, tente novamente!</span> }
         <GlobalButton
           login
           children="Entrar"

@@ -15,6 +15,7 @@ function Update() {
   const [selectedOption, setSelectedOption] = useState({ value: 'BRL', label: 'BRL - Real' });
   const [value, setValue] = useState('');
   const [currency, setCurrency] = useState();
+  // const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
