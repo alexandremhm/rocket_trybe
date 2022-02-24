@@ -1,6 +1,6 @@
 const { getAllCurrency } = require('../api/index');
 const { formatResponse } = require('../helpers/formatCurrencies');
-const { writeJsonData } = require('../helpers/jsonCurrencies');
+const { writeJsonData, getCurrencyOnJson } = require('../helpers/jsonCurrencies');
 
 const getCurrencies = async () => {
   const response = await getAllCurrency();
@@ -12,7 +12,13 @@ const updateCurrencyOnJson = async (code, value) => {
   writeJsonData(code, value);
 };
 
+const getCurrency = async (code) => {
+  const currency = await getCurrencyOnJson(code);
+  return currency;
+};
+
 module.exports = {
   getCurrencies,
   updateCurrencyOnJson,
+  getCurrency,
 };

@@ -7,6 +7,11 @@ const getJsonData = () => {
   return JSON.parse(raw);
 };
 
+const getCurrencyOnJson = (code) => {
+  const data = getJsonData();
+  return data[code];
+};
+
 const writeJsonData = (key, value) => {
   const file = path.join(`${__dirname}/../currencies.json`);
   const raw = fs.readFileSync(file);
@@ -21,4 +26,5 @@ const writeJsonData = (key, value) => {
 module.exports = {
   getJsonData,
   writeJsonData,
+  getCurrencyOnJson,
 };

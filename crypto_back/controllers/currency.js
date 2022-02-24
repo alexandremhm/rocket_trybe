@@ -19,7 +19,18 @@ const updateCurrencyOnJson = async (req, res) => {
   }
 };
 
+const getCurrency = async (req, res) => {
+  try {
+    const { code } = req.params;
+    const response = await Service.getCurrency(code);
+    return res.status(200).json(response);
+  } catch (e) {
+    return res.status(500).json({ message: 'Erro interno' });
+  }
+};
+
 module.exports = {
   getCurrencies,
   updateCurrencyOnJson,
+  getCurrency,
 };

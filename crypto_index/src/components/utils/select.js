@@ -1,6 +1,6 @@
 export const selectOptions = [
   { value: 'BRL', label: 'BRL - Real' },
-  { value: 'USD', label: 'USD - Dólar americano' },
+  { value: 'CAD', label: 'CAD - Dólar canadense' },
   { value: 'EUR', label: 'EUR - Euro' },
 ];
 
