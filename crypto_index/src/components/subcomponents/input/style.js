@@ -27,9 +27,11 @@ export const EmailInput = styled.input.attrs({
 `;
 
 export const PasswordInput = styled.input.attrs({
-  type: 'password',
+  type: 'number',
   placeholder: 'Senha: ******',
 })`
+
+  -webkit-text-security: disc;
   width: 250px;
   height: 20px;
   padding: 10px;

@@ -6,5 +6,6 @@ const { currencyValuesValidator, currenciesCodeValidator } = require('../middlew
 
 router.get('/crypto/btc', tokenValidator, controller.getCurrencies);
 router.post('/crypto/btc', tokenValidator, currenciesCodeValidator, currencyValuesValidator, controller.updateCurrencyOnJson);
+router.get('/crypto/btc/:code', tokenValidator, controller.getCurrency);
 
 module.exports = router;

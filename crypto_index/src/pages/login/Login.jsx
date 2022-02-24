@@ -1,26 +1,35 @@
 /* eslint-disable react/no-children-prop */
+/* eslint consistent-return: "error" */
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import { createContext } from 'react';
 import * as S from './style';
 import GlobalButton from '../../components/subcomponents/button/index';
 import { PasswordInput, EmailInput } from '../../components/subcomponents/input/style';
 import { schema } from '../../validators/login';
+import handleLogin from '../../services/login';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState(false);
   const [password, setPassword] = useState('');
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
-  const handleRedirect = () => {
-    history.push('/');
+  const handleRedirect = async () => {
+    try {
+      const { token } = await handleLogin({ email, password });
+      localStorage.setItem('token', token);
+      navigate('/');
+    } catch (error) {
+      setErrorMessage(error.response.data.message);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    schema.validate({ email, password })
+    const parsePassword = parseInt(password, 10);
+    schema.validate({ password: parsePassword, email })
       .then(() => { handleRedirect(); })
       .catch(() => { setErrorMessage((state) => !state); });
   };
@@ -35,9 +44,7 @@ function Login() {
         <PasswordInput
           onChange={(e) => setPassword(e.target.value)}
         />
-        {
-                  errorMessage && <span>Dados inválidos, tente novamente!</span>
-                }
+        { errorMessage && <span>Dados inválidos, tente novamente!</span> }
         <GlobalButton
           login
           children="Entrar"
