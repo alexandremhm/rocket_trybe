@@ -64,7 +64,7 @@ function Update() {
       <header>
         <GlobalButton
           back
-          children="voltar"
+          children="Voltar"
           onClick={handleBack}
         />
       </header>
@@ -86,7 +86,7 @@ function Update() {
         <Label>
           <p>Novo valor</p>
           <input
-            type="text"
+            type="number"
             onChange={(e) => setValue(e.target.value)}
           />
         </Label>
