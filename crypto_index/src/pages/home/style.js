@@ -21,6 +21,21 @@ export const Container = styled.div`
       background: #ffffff;
       border-radius: 10px;
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+
+      button {
+        border: 2px solid #396C52;
+      }
+    }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      margin-right: 200px
     }
 
     p {

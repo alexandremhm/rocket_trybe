@@ -40,14 +40,17 @@ function Login() {
         <S.Title>Login</S.Title>
         <EmailInput
           onChange={(e) => setEmail(e.target.value)}
+          data-testid="email-input"
         />
         <PasswordInput
           onChange={(e) => setPassword(e.target.value)}
+          data-testid="password-input"
         />
         <GlobalButton
           login
           children="Entrar"
           onClick={(e) => handleSubmit(e)}
+          data-testid="login-button"
         />
       </S.LoginBox>
     </S.Container>

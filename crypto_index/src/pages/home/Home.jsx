@@ -31,16 +31,29 @@ function Home() {
     handleGetCurrencies().then((response) => setData(response));
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
+  };
+
   return (
     <S.Container>
       {loading ? (
         <LoadSpinner />
       ) : (
         <section className="crypto-container">
+          <header>
+            <GlobalButton
+              back
+              children="Sair"
+              onClick={handleLogout}
+            />
+          </header>
           <GlobalButton
             login
             children="Atualizar valor monetário"
             onClick={() => navigate('/update')}
+            data-testid="update-button"
           />
           <Label>
             BTC
