@@ -17,14 +17,14 @@
 
 ## Tecnologias
 
-- <a href="https://pt-br.reactjs.org/docs/getting-started.html">React</a>
-- <a href="https://styled-components.com/">Styled Components</a>
-- <a href="https://nodejs.org/en/">NodeJs</a>
-- <a href="https://testing-library.com/docs/react-testing-library/intro/">React esting Library</a>
-- <a href="https://react-select.com/home">React - Select</a>
-- <a href="https://www.npmjs.com/package/react-toastify">Toastify</a>
-- <a href="https://www.npmjs.com/package/joi">Joi</a>
-- <a href="https://www.npmjs.com/package/yup">Yup</a>
+- <a href="https://pt-br.reactjs.org/docs/getting-started.html" target="_blank" >React</a>
+- <a href="https://styled-components.com/" target="_blank" >Styled Components</a>
+- <a href="https://nodejs.org/en/" target="_blank" >NodeJs</a>
+- <a href="https://testing-library.com/docs/react-testing-library/intro/" target="_blank">React esting Library</a>
+- <a href="https://react-select.com/home" target="_blank" >React - Select</a>
+- <a href="https://www.npmjs.com/package/react-toastify" target="_blank" >Toastify</a>
+- <a href="https://www.npmjs.com/package/joi" target="_blank" >Joi</a>
+- <a href="https://www.npmjs.com/package/yup" target="_blank" >Yup</a>
 
 <br/>
 
