@@ -2,7 +2,7 @@
 
 ## Descrição do Projeto
 
-<p>Uma aplicação web que exibe a cotação de moedas em Bitcoins em relação ao dólar. O front-end foi desenvolvido em React v17 utilizando JavaScript ES6. A estilização foi feita utilizando styled components, com componentes reutilizáveis sempre que necessário. Para o back-end foi construída uma API em NodeJs, em uma arquitura MSC com pequenas adaptações. A camada "model" não foi utilizada, uma vez que a comunicação com banco de dados não era necessária. Como próximos passos, a implementação de testes unitários e de integração no back e o aumento de cobertura dos mesmos no front.</p><p align="center">🚀 #VQV</p>
+<p>Uma aplicação web que exibe a cotação de moedas em Bitcoins em relação ao dólar. O front-end foi desenvolvido em React v17 utilizando JavaScript ES6. A estilização foi feita utilizando styled components, com componentes reutilizáveis sempre que necessário. Para o back-end foi construída uma API em NodeJs, em uma arquitura MSC com pequenas adaptações. A camada "model" não foi utilizada, uma vez que a comunicação com banco de dados não era necessária. Como próximos passos, a implementação de testes unitários e de integração no back e o aumento de cobertura dos mesmos no front.</p> <p align="center">🚀 #VQV</p>
 
 
 # Sumário
