@@ -12,4 +12,7 @@ const getCurrencyOnJson = (code) => {
   return data[code];
 };
 
-console.log(getCurrencyOnJson('BRL'));
+module.exports = {
+  getJsonData,
+  getCurrencyOnJson,
+};
